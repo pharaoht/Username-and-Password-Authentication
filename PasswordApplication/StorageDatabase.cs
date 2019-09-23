@@ -5,17 +5,33 @@ using System.Text;
 
 namespace PasswordApplication
 {
-    class StorageDatabase
+    public class StorageDatabase
     {
-        Hashtable 
-
-
-
-
-
-
-
         //Data Structures 
         //whatever the user puts in for username and password has to link to the data structure
+
+        public StorageDatabase()
+        {
+                
+        }
+
+
+
+
+    }
+   
+    public class GenericDictionary<TKey, TValue>
+    {
+        public void Add(TKey username)
+        {
+
+        }
+
+        public void Add2(TValue password)
+        {
+
+        }
     }
 }
+
+

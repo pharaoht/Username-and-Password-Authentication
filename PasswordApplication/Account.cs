@@ -4,16 +4,19 @@ namespace PasswordApplication
 {
     public class Account
     {
-        private string _userValueForUserName;
-        private int _userNameRequireLength = 6;
+        private string _userInputUsername;
+        private string _userInputPassword;
+        public Account()
+        {
+        }
         public void UserName()
         {
-            Console.WriteLine("Please enter a unique Username");
-            _userValueForUserName = Console.ReadLine();
-            if (_userValueForUserName < )
-            {
-
-            }
+            
+            Console.WriteLine("Input Desired Username, then press enter");
+            var username = new GenericDictionary<string,string >();
+            username.Add(_userInputUsername = Console.ReadLine());
+            Console.WriteLine("Input password, then press enter");
+            username.Add2(_userInputPassword=Console.ReadLine());
 
         }
     }
