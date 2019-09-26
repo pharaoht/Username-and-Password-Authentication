@@ -8,6 +8,7 @@ namespace PasswordApplication
         {
             Menu menu = new Menu();
             menu.Prompt();
+            
         }
     }
 }

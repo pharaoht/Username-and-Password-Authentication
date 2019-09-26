@@ -12,13 +12,11 @@ namespace PasswordApplication
     class Menu
     {
         private int _userValueForPromptMethod;
-        bool Y = true;
+       Account account = new Account();
 
         
        public void Prompt()
        {
-           
-           
                Console.WriteLine("-------------------------------------------------------------------------");
                Console.WriteLine("");
                Console.WriteLine("PASSWORD AUTHENTICATION SYSTEM");
@@ -32,22 +30,23 @@ namespace PasswordApplication
                Console.WriteLine("");
                Console.WriteLine("--------------------------------------------------------------------------");
                _userValueForPromptMethod = Convert.ToInt32(Console.ReadLine());
+
                if (_userValueForPromptMethod == 1)
                {
-                   Account account = new Account();
+                   
                    account.UserName();
-
+                   
                }
                else if(_userValueForPromptMethod == 2)
                {
-
+                account.Authenticate();
                }
                else if (_userValueForPromptMethod == 3)
                {
                   Environment.Exit(0);
                }
                else
-               {
+               { 
                    Environment.Exit(0);
                }
 
@@ -55,20 +54,18 @@ namespace PasswordApplication
                {
                    Console.WriteLine("Do you want to continue? y/n");
                    string x = Console.ReadLine();
-                 if (x == "y")
-                 {
-                     Prompt();
-                 }
-                 else if (x == "n")
-                 {
-                    
-                    Environment.Exit(0);
-                 }
+                   if (x == "y")
+                   {
+                       Console.Clear();
+                       Prompt();
+                   }
+                   else if (x == "n")
+                   {
+                       account.ExitCall();
+                       Environment.Exit(0);
+                   }
                }
-               
-           
        }
 
- 
     }
 }
