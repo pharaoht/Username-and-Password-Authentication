@@ -1,23 +1,36 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace PasswordApplication
 {
     public class Account
     {
-        private string _userInputUsername;
-        private string _userInputPassword;
-        public Account()
-        {
-        }
+ 
+        public string username { get; set; }
+        public string password { get; set; }
+       static Dictionary<string, string> _account = new Dictionary<string, string>();
+
         public void UserName()
         {
             
-            Console.WriteLine("Input Desired Username, then press enter");
-            var username = new GenericDictionary<string,string >();
-            username.Add(_userInputUsername = Console.ReadLine());
-            Console.WriteLine("Input password, then press enter");
-            username.Add2(_userInputPassword=Console.ReadLine());
+            try
+            {
+                Console.WriteLine("Input a username, press enter and then input password");
+            _account.Add(username = Console.ReadLine(), password = Console.ReadLine());
+
+            }
+
+            catch
+
+            {
+                Console.WriteLine("That username is taken enter new one");
+                UserName();
+            }
+            
+            
+           
 
         }
+
     }
 }

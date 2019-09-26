@@ -6,9 +6,8 @@ namespace PasswordApplication
     {
         static void Main(string[] args)
         {
-            var displaymenu = new Interface();
-            displaymenu.Prompt();
-            
+            Menu menu = new Menu();
+            menu.Prompt();
         }
     }
 }
