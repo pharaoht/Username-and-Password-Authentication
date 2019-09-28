@@ -17,6 +17,7 @@ namespace PasswordApplication
         
        public void Prompt()
        {
+               Console.ForegroundColor = ConsoleColor.White;
                Console.WriteLine("-------------------------------------------------------------------------");
                Console.WriteLine("");
                Console.WriteLine("PASSWORD AUTHENTICATION SYSTEM");
@@ -43,16 +44,18 @@ namespace PasswordApplication
                }
                else if (_userValueForPromptMethod == 3)
                {
-                  Environment.Exit(0);
+                account.ExitCall();
+                  
                }
                else
                { 
-                   Environment.Exit(0);
+                  account.ExitCall();
                }
 
                while (true)
                {
-                   Console.WriteLine("Do you want to continue? y/n");
+                   Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.WriteLine("Do you want to continue? y/n");
                    string x = Console.ReadLine();
                    if (x == "y")
                    {
@@ -62,7 +65,7 @@ namespace PasswordApplication
                    else if (x == "n")
                    {
                        account.ExitCall();
-                       Environment.Exit(0);
+                       
                    }
                }
        }
