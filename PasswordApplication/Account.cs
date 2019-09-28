@@ -32,6 +32,8 @@ namespace PasswordApplication
                 UserName();
                 
             }
+
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
             var key = "b14ca5898a4e4133bbce2ea2315a1916";
             var encryptedString = encrypt.EncryptString(key, password);
                 Console.WriteLine($"encrypted string = {encryptedString}");
@@ -42,7 +44,10 @@ namespace PasswordApplication
         {
             foreach (KeyValuePair<string, string> z in _account)
             {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("These accounts will be lost forever");
                 Console.WriteLine("username: {0}, password = {1}", z.Key, z.Value);
+                Console.ForegroundColor = ConsoleColor.White;
                 Environment.Exit(0);
 
             }
@@ -50,6 +55,7 @@ namespace PasswordApplication
 
         public void Authenticate()
         {
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Enter your username");
             var userInput = Console.ReadLine();
             Console.WriteLine("enter password");
@@ -64,6 +70,7 @@ namespace PasswordApplication
                 }
 
                 if (userInput == z.Key) continue;
+                Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine("That account does not exist");
                 Authenticate();
 
